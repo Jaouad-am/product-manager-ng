@@ -4,6 +4,7 @@ import { Product } from 'src/app/model/product/product.model';
 import { ProductsService } from 'src/app/services/products.service';
 import { catchError, map, startWith } from 'rxjs/operators';
 import { of } from 'rxjs';
+import { AppDataState, DataStateEnum } from 'src/app/state/product.state';
 
 @Component({
   selector: 'app-products',
@@ -12,7 +13,8 @@ import { of } from 'rxjs';
 })
 export class ProductsComponent implements OnInit {
   //products?:Product[]; //ou |null=null
-  products$:Observable<Product[]> |null=null;
+  products$:Observable<AppDataState<Product[]>> |null=null;
+  readonly DataStateEnum=DataStateEnum;
 
   constructor(private productsService:ProductsService) { }
 
@@ -23,13 +25,11 @@ export class ProductsComponent implements OnInit {
       {this.products = data;}, err=>{console.log(err.message);})*/
 
     this.products$ = this.productsService.getProducts().pipe(
-      map(data=>({dataState: "LOADED", data:data})),
-      startWith({dataState: "LOADING"}),
-      catchError(err=>of({dataState: "LOADED", errorMessage: err.message}))
+      map(data=>({dataState: DataStateEnum.LOADED, data:data})),
+      startWith({dataState: DataStateEnum.LOADING}),
+      catchError(err=>of({dataState: DataStateEnum.ERROR, errorMessage: err.message}))
       
       );
-    
-    ;
 
   }
 }
