@@ -9,20 +9,25 @@ import { Product } from '../model/product/product.model';
 })
 export class ProductsService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getProducts():Observable<Product[]>{
-    let host= environment.host;
+  getProducts(): Observable<Product[]> {
+    let host = environment.host;
     return this.http.get<Product[]>(`${host}/products`);
-  } 
+  }
 
-    getSelectedProducts():Observable<Product[]>{
-      let host= environment.host;
-      return this.http.get<Product[]>(`${host}/products?selected=true`);
-    } 
+  getSelectedProducts(): Observable<Product[]> {
+    let host = environment.host;
+    return this.http.get<Product[]>(`${host}/products?selected=true`);
+  }
 
-    getAvailableProducts():Observable<Product[]>{
-      let host= environment.host;
-      return this.http.get<Product[]>(`${host}/products?available=true`);
-    } 
+  getAvailableProducts(): Observable<Product[]> {
+    let host = environment.host;
+    return this.http.get<Product[]>(`${host}/products?available=true`);
+  }
+
+  searchProducts(keyword: string): Observable<Product[]> {
+    let host = environment.host;
+    return this.http.get<Product[]>(`${host}/products?name_like=${keyword}`);
+  }
 }

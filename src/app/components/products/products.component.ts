@@ -50,4 +50,13 @@ export class ProductsComponent implements OnInit {
 
     );
   }
+
+  onSearch(dataForm: any) {
+    this.products$ = this.productsService.searchProducts(dataForm.keyword).pipe(
+      map(data => ({ dataState: DataStateEnum.LOADED, data: data })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({ dataState: DataStateEnum.ERROR, errorMessage: err.message }))
+
+    );
+  }
 }
