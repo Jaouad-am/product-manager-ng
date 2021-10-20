@@ -4,25 +4,25 @@
     <!-- Links -->
     <ul class="navbar-nav">
         <li>
-            <button (click)="getProducts()" class="btn btn-outline-info ml-2">All</button>
+            <button (click)="getProducts()" class="btn btn-sm btn-outline-info ml-2">All</button>
 
         </li>
         <li>
-            <button (click)="getSelectedProducts()" class="btn btn-outline-info ml-2">Selected</button>
+            <button (click)="getSelectedProducts()" class="btn btn-sm btn-outline-info ml-2">Selected</button>
         </li>
         <li>
-            <button (click)="getAvailableProducts()" class="btn btn-outline-info ml-2">Available</button>
+            <button (click)="getAvailableProducts()" class="btn btn-sm btn-outline-info ml-2">Available</button>
         </li>
     </ul>
     <ul class="navbar navbar-nav ml-auto">
         <li>
-            <form #f="ngForm" (ngSubmit)="onSearch(f.value)">
-                <div class="form-group">
-                    <input ngModel name="keyword" class="form-control" type="text">
-                    <button class="btn btn-outline-info">
-                        <span class="fa fa-search"></span>
-                    </button>
-                </div>
+            <form class="form-inline" #f="ngForm" (ngSubmit)="onSearch(f.value)">
+
+                <input ngModel name="keyword" type="text">
+                <button class="btn btn-sm btn-outline-info ml-2">
+                    <span class="fa fa-search"></span>
+                </button>
+
             </form>
         </li>
     </ul>
@@ -57,6 +57,18 @@
                     <td>{{p.quantity}}</td>
                     <td>{{p.selected}}</td>
                     <td>{{p.available}}</td>
+                    <td>
+                        <button (click)="selectProduct(p)" [ngClass]="p.selected?'btn-success':'btn-danger'"
+                            class="btn btn-sm btn-success">
+                            <span *ngIf="p.selected">Unselect</span>
+                            <span *ngIf="!p.selected">Select</span>
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteProduct(p)">
+                            <span class="fa fa-trash-o"></span>
+                        </button>
+                    </td>
 
                 </tr>
             </table>
