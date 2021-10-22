@@ -23,6 +23,14 @@
       "quantity": "100",
       "selected": false,
       "available": true
+    },
+    {
+      "name": "Headphones",
+      "price": "99",
+      "quantity": "5",
+      "selected": false,
+      "available": true,
+      "id": 4
     }
   ]
 }
