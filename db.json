@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "PC",
-      "price": 780,
+      "price": "7800",
       "quantity": "500",
       "selected": true,
       "available": true
@@ -11,7 +11,7 @@
     {
       "id": 2,
       "name": "Mouse",
-      "price": 90,
+      "price": "900",
       "quantity": "350",
       "selected": true,
       "available": true
