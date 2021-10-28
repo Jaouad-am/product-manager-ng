@@ -13,7 +13,7 @@
       "name": "Mouse",
       "price": "900",
       "quantity": "350",
-      "selected": true,
+      "selected": false,
       "available": true
     },
     {
@@ -21,14 +21,14 @@
       "name": "Graphic Card",
       "price": 1200,
       "quantity": "100",
-      "selected": false,
+      "selected": true,
       "available": true
     },
     {
       "name": "Headphones",
       "price": "99",
       "quantity": "5",
-      "selected": false,
+      "selected": true,
       "available": true,
       "id": 4
     }
