@@ -4,6 +4,9 @@ export enum productActionsTypes {
     GET_AVAILABLE_PRODUCTS = "AVAILABLE",
     SEARCH_PRODUCTS = "SEARCH",
     NEW_PRODUCT = "NEW",
+    SELECT_PRODUCT = "SELECT",
+    UPDATE_PRODUCT = "UPDATE",
+    DELETE_PRODUCT = "DELETE",
 
 }
 

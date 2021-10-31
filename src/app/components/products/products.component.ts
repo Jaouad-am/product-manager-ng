@@ -93,6 +93,9 @@ export class ProductsComponent implements OnInit {
       case productActionsTypes.GET_AVAILABLE_PRODUCTS: this.getAvailableProducts(); break;
       case productActionsTypes.SEARCH_PRODUCTS: this.onSearch($event.payload); break;
       case productActionsTypes.NEW_PRODUCT: this.newProduct(); break;
+      case productActionsTypes.SELECT_PRODUCT: this.selectProduct($event.payload); break;
+      case productActionsTypes.UPDATE_PRODUCT: this.onUpdate($event.payload); break;
+      case productActionsTypes.DELETE_PRODUCT: this.deleteProduct($event.payload); break;
     }
     //console.log($event);
   }

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from 'src/app/model/product/product.model';
-import { ActionEvent, AppDataState, DataStateEnum } from 'src/app/state/product.state';
+import { ActionEvent, AppDataState, DataStateEnum, productActionsTypes } from 'src/app/state/product.state';
 
 @Component({
   selector: 'app-products-list',
@@ -19,15 +19,15 @@ export class ProductsListComponent implements OnInit {
   }
 
   selectProduct(p: Product) {
-    this.productEventEmitter.emit()
+    this.productEventEmitter.emit({ type: productActionsTypes.SELECT_PRODUCT, payload: p });
   }
 
   deleteProduct(p: Product) {
-
+    this.productEventEmitter.emit({ type: productActionsTypes.DELETE_PRODUCT, payload: p })
   }
 
   onUpdate(p: Product) {
-
+    this.productEventEmitter.emit({ type: productActionsTypes.UPDATE_PRODUCT, payload: p })
   }
 
 }
