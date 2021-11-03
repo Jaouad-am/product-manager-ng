@@ -10,7 +10,7 @@ import { ActionEvent, AppDataState, DataStateEnum, productActionsTypes } from 's
 })
 export class ProductsListComponent implements OnInit {
   @Input() productsList$: Observable<AppDataState<Product[]>> | null = null;
-  @Output() productEventEmitter: EventEmitter<ActionEvent> = new EventEmitter();
+  @Output() productEventEmitter: EventEmitter<ActionEvent> = new EventEmitter<ActionEvent>();
   readonly DataStateEnum = DataStateEnum;
 
   constructor() { }
@@ -28,6 +28,10 @@ export class ProductsListComponent implements OnInit {
 
   onUpdate(p: Product) {
     this.productEventEmitter.emit({ type: productActionsTypes.UPDATE_PRODUCT, payload: p })
+  }
+
+  onEventEmitted($event: ActionEvent) {
+
   }
 
 }
