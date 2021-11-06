@@ -31,7 +31,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   onEventEmitted($event: ActionEvent) {
-
+    this.productEventEmitter.emit($event);
   }
 
 }
