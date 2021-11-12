@@ -5,14 +5,6 @@
       "name": "PC",
       "price": "7800",
       "quantity": "500",
-      "selected": true,
-      "available": true
-    },
-    {
-      "id": 2,
-      "name": "Mouse",
-      "price": "900",
-      "quantity": "350",
       "selected": false,
       "available": true
     },
@@ -21,14 +13,14 @@
       "name": "Graphic Card",
       "price": 1200,
       "quantity": "100",
-      "selected": true,
+      "selected": false,
       "available": false
     },
     {
       "name": "Headphones",
       "price": "99",
       "quantity": "5",
-      "selected": true,
+      "selected": false,
       "available": true,
       "id": 4
     }
