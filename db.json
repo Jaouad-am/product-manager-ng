@@ -13,14 +13,14 @@
       "name": "Graphic Card",
       "price": 1200,
       "quantity": "100",
-      "selected": false,
+      "selected": true,
       "available": false
     },
     {
       "name": "Headphones",
       "price": "99",
       "quantity": "5",
-      "selected": false,
+      "selected": true,
       "available": true,
       "id": 4
     }

@@ -1,0 +1,19 @@
+import { Component, OnInit } from '@angular/core';
+import { EventDriverService } from 'src/app/state/event.driver.service';
+
+@Component({
+  selector: 'app-stats',
+  templateUrl: './stats.component.html',
+  styleUrls: ['./stats.component.css']
+})
+export class StatsComponent implements OnInit {
+  counter: number = 0;
+  constructor(private eventDrivenService: EventDriverService) { }
+
+  ngOnInit(): void {
+    this.eventDrivenService.sourceEventSubjectObservable.subscribe(() =>
+      this.counter++
+    )
+  }
+
+}
